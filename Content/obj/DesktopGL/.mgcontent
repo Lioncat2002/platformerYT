@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Profile>Reach</Profile>
+  <Platform>DesktopGL</Platform>
+  <Config />
+  <SourceFiles>
+    <File>D:/monogame/platformerYT/Content/Cave Tileset/_Complete_static_BG_(288 x 208).png</File>
+    <File>D:/monogame/platformerYT/Content/Cave Tileset/Brown_Tile_Terrain (16 x 16).png</File>
+    <File>D:/monogame/platformerYT/Content/Cave Tileset/full.png</File>
+    <File>D:/monogame/platformerYT/Content/Cave Tileset/Gray_Tile_Terrain (16 x 16).png</File>
+    <File>D:/monogame/platformerYT/Content/Cave Tileset/Scaffolding_and_BG_Parts (16 x 16).png</File>
+    <File>D:/monogame/platformerYT/Content/Common Pick-ups/Coin (16 x 16).png</File>
+    <File>D:/monogame/platformerYT/Content/Common Pick-ups/Health_Kit (16 x 16).png</File>
+    <File>D:/monogame/platformerYT/Content/Common Pick-ups/Heart_Spin (16 x 16).png</File>
+    <File>D:/monogame/platformerYT/Content/Common Pick-ups/Small_Coin (16 x 16).png</File>
+    <File>D:/monogame/platformerYT/Content/Common Pick-ups/Treasure_Chest (32 x 16).png</File>
+    <File>D:/monogame/platformerYT/Content/Common Pick-ups/Wrapped_Presents (16 x 16).png</File>
+    <File>D:/monogame/platformerYT/Content/sfx/collect.wav</File>
+    <File>D:/monogame/platformerYT/Content/sfx/enemyDie.wav</File>
+    <File>D:/monogame/platformerYT/Content/sfx/shoot.wav</File>
+    <File>D:/monogame/platformerYT/Content/Sprite Pack 4/1 - Agent_Mike_Bullet (16 x 16).png</File>
+    <File>D:/monogame/platformerYT/Content/Sprite Pack 4/1 - Agent_Mike_Hurt (32 x 32).png</File>
+    <File>D:/monogame/platformerYT/Content/Sprite Pack 4/1 - Agent_Mike_Idle (32 x 32).png</File>
+    <File>D:/monogame/platformerYT/Content/Sprite Pack 4/1 - Agent_Mike_Jump_&amp;_Falling (32 x 32).png</File>
+    <File>D:/monogame/platformerYT/Content/Sprite Pack 4/1 - Agent_Mike_Running (32 x 32).png</File>
+    <File>D:/monogame/platformerYT/Content/Sprite Pack 4/10 - Blankey_Floating (32 x 32).png</File>
+    <File>D:/monogame/platformerYT/Content/Sprite Pack 4/10 - Blankey_Hurt (32 x 32).png</File>
+    <File>D:/monogame/platformerYT/Content/Sprite Pack 4/2 - Martian_Red_Hurt (32 x 32).png</File>
+    <File>D:/monogame/platformerYT/Content/Sprite Pack 4/2 - Martian_Red_Idle (32 x 32).png</File>
+    <File>D:/monogame/platformerYT/Content/Sprite Pack 4/2 - Martian_Red_Running (32 x 32).png</File>
+    <File>D:/monogame/platformerYT/Content/Sprite Pack 4/3 - Hermie_Crawling (32 x 32).png</File>
+    <File>D:/monogame/platformerYT/Content/Sprite Pack 4/3 - Hermie_Hiding_&amp;_Peek (32 x 32).png</File>
+    <File>D:/monogame/platformerYT/Content/Sprite Pack 4/3 - Hermie_Idle (32 x 32).png</File>
+    <File>D:/monogame/platformerYT/Content/Sprite Pack 4/4 - Ballooney_Flying (32 x 32).png</File>
+    <File>D:/monogame/platformerYT/Content/Sprite Pack 4/5 - Robot_Walky_Hurt (32 x 32).png</File>
+    <File>D:/monogame/platformerYT/Content/Sprite Pack 4/5 - Robot_Walky_Idle (32 x 32).png</File>
+    <File>D:/monogame/platformerYT/Content/Sprite Pack 4/5 - Robot_Walky_Movement (32 x 32).png</File>
+    <File>D:/monogame/platformerYT/Content/Sprite Pack 4/6 - Jumpy_Lumpy_Hurt (32 x 32).png</File>
+    <File>D:/monogame/platformerYT/Content/Sprite Pack 4/6 - Jumpy_Lumpy_Idle (32 x 32).png</File>
+    <File>D:/monogame/platformerYT/Content/Sprite Pack 4/6 - Jumpy_Lumpy_Leaping_&amp;_Falling (32 x 32).png</File>
+    <File>D:/monogame/platformerYT/Content/Sprite Pack 4/7 - Orchid_Owl_Flying (32 x 32).png</File>
+    <File>D:/monogame/platformerYT/Content/Sprite Pack 4/7 - Orchid_Owl_Hurt (32 x 32).png</File>
+    <File>D:/monogame/platformerYT/Content/Sprite Pack 4/7 - Orchid_Owl_Idle (32 x 32).png</File>
+    <File>D:/monogame/platformerYT/Content/Sprite Pack 4/8 - Roach_Hurt (32 x 32).png</File>
+    <File>D:/monogame/platformerYT/Content/Sprite Pack 4/8 - Roach_Idle (32 x 32).png</File>
+    <File>D:/monogame/platformerYT/Content/Sprite Pack 4/8 - Roach_Running (32 x 32).png</File>
+    <File>D:/monogame/platformerYT/Content/Sprite Pack 4/9 - Mr._Circuit_Hurt (32 x 32).png</File>
+    <File>D:/monogame/platformerYT/Content/Sprite Pack 4/9 - Mr._Circuit_Idle (32 x 32).png</File>
+    <File>D:/monogame/platformerYT/Content/Sprite Pack 4/9 - Mr._Circuit_Running (32 x 32).png</File>
+  </SourceFiles>
+  <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+  </DestFiles>
+</SourceFileCollection>
