@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>D:/monogame/platformerYT/Content/sfx/collect.wav</SourceFile>
+  <SourceFile>D:/monogame/platformerYT/platformerYT/Content/sfx/collect.wav</SourceFile>
   <SourceTime>2021-10-21T13:14:14.8648274+05:30</SourceTime>
-  <DestFile>D:/monogame/platformerYT/Content/bin/DesktopGL/sfx/collect.xnb</DestFile>
-  <DestTime>2021-10-30T18:06:57.4963376+05:30</DestTime>
+  <DestFile>D:/monogame/platformerYT/platformerYT/Content/bin/DesktopGL/sfx/collect.xnb</DestFile>
+  <DestTime>2021-11-06T20:18:36.7429008+05:30</DestTime>
   <Importer>WavImporter</Importer>
   <ImporterTime>2020-08-10T21:47:54+05:30</ImporterTime>
   <Processor>SoundEffectProcessor</Processor>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>D:/monogame/platformerYT/Content/Sprite Pack 4/3 - Hermie_Idle (32 x 32).png</SourceFile>
+  <SourceFile>D:/monogame/platformerYT/platformerYT/Content/Sprite Pack 4/3 - Hermie_Idle (32 x 32).png</SourceFile>
   <SourceTime>2021-08-30T10:30:16.458435+05:30</SourceTime>
-  <DestFile>D:/monogame/platformerYT/Content/bin/DesktopGL/Content/Sprite Pack 4/3 - Hermie_Idle (32 x 32).xnb</DestFile>
-  <DestTime>2021-10-30T18:07:02.6234622+05:30</DestTime>
+  <DestFile>D:/monogame/platformerYT/platformerYT/Content/bin/DesktopGL/Content/Sprite Pack 4/3 - Hermie_Idle (32 x 32).xnb</DestFile>
+  <DestTime>2021-11-04T20:50:29.0852126+05:30</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2020-08-10T21:47:54+05:30</ImporterTime>
   <Processor>TextureProcessor</Processor>

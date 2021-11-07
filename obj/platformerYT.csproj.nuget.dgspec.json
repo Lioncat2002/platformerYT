@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\monogame\\platformerYT\\platformerYT.csproj": {}
+    "D:\\monogame\\platformerYT\\platformerYT\\platformerYT.csproj": {}
   },
   "projects": {
-    "D:\\monogame\\platformerYT\\platformerYT.csproj": {
+    "D:\\monogame\\platformerYT\\platformerYT\\platformerYT.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\monogame\\platformerYT\\platformerYT.csproj",
+        "projectUniqueName": "D:\\monogame\\platformerYT\\platformerYT\\platformerYT.csproj",
         "projectName": "platformerYT",
-        "projectPath": "D:\\monogame\\platformerYT\\platformerYT.csproj",
+        "projectPath": "D:\\monogame\\platformerYT\\platformerYT\\platformerYT.csproj",
         "packagesPath": "C:\\Users\\kittycat\\.nuget\\packages\\",
-        "outputPath": "D:\\monogame\\platformerYT\\obj\\",
+        "outputPath": "D:\\monogame\\platformerYT\\platformerYT\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"

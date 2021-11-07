@@ -1,7 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-
+using TiledSharp;
 namespace platformerYT.src
 {
     public class Game1 : Game
@@ -9,10 +9,15 @@ namespace platformerYT.src
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
 
-        private Texture2D playerSprite;
+        #region Tilemaps
+        private TmxMap map;
+        private TilemapManager tilemapManager;
+        private Texture2D tileset;
+        #endregion
 
+        #region Player 
         private Player player;
-  
+        #endregion
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
@@ -31,10 +36,24 @@ namespace platformerYT.src
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            playerSprite = Content.Load<Texture2D>("Sprite Pack 4\\1 - Agent_Mike_Running (32 x 32)");
+            #region Tilemap
+            map = new TmxMap("Content\\level1.tmx");
+            tileset = Content.Load<Texture2D>("Cave Tileset\\"+map.Tilesets[0].Name.ToString());
+            int tileWidth = map.Tilesets[0].TileWidth;
+            int tileHeight = map.Tilesets[0].TileHeight;
+            int tilesetTileWidth = tileset.Width / tileWidth;
 
-           player = new Player(playerSprite);
-            
+            tilemapManager = new TilemapManager(map,tileset,tilesetTileWidth,tileWidth,tileHeight);
+            #endregion
+
+
+
+            #region Player
+            player = new Player(
+                Content.Load<Texture2D>("Sprite Pack 4\\1 - Agent_Mike_Idle (32 x 32)"),
+                Content.Load<Texture2D>("Sprite Pack 4\\1 - Agent_Mike_Running (32 x 32)")
+             );
+            #endregion
             // TODO: use this.Content to load your game content here
         }
 
@@ -53,8 +72,8 @@ namespace platformerYT.src
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             _spriteBatch.Begin();
-            
-            
+
+            tilemapManager.Draw(_spriteBatch);
             player.Draw(_spriteBatch, gameTime);
             _spriteBatch.End();
             // TODO: Add your drawing code here

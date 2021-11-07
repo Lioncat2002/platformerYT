@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>D:/monogame/platformerYT/Content/Cave Tileset/full.png</SourceFile>
+  <SourceFile>D:/monogame/platformerYT/platformerYT/Content/Cave Tileset/full.png</SourceFile>
   <SourceTime>2021-09-18T19:22:06.6104464+05:30</SourceTime>
-  <DestFile>D:/monogame/platformerYT/Content/bin/DesktopGL/Content/Cave Tileset/full.xnb</DestFile>
-  <DestTime>2021-10-30T18:06:56.5524733+05:30</DestTime>
+  <DestFile>D:/monogame/platformerYT/platformerYT/Content/bin/DesktopGL/Content/Cave Tileset/full.xnb</DestFile>
+  <DestTime>2021-11-04T20:50:19.3956506+05:30</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2020-08-10T21:47:54+05:30</ImporterTime>
   <Processor>TextureProcessor</Processor>

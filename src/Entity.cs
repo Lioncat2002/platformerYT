@@ -8,7 +8,11 @@ namespace platformerYT.src
 {
     public abstract class Entity
     {
-       
+       public enum currentAnimation
+        {
+            Idle,
+            Run,
+        }
         public Vector2 postion;
        
         public abstract void Update();

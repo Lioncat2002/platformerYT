@@ -145,6 +145,9 @@
 /processorParam:TextureFormat=Color
 /build:Common Pick-ups/Wrapped_Presents (16 x 16).png
 
+#begin level1.tmx
+/copy:level1.tmx
+
 #begin sfx/collect.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
