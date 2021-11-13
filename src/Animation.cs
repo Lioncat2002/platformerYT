@@ -17,7 +17,7 @@ namespace platformerYT.src
         {
             this.spritesheet = spritesheet;
             frames = (int)(spritesheet.Width / width);
-            Console.WriteLine(frames);
+            
         }
 
         public void Draw(SpriteBatch spriteBatch,Vector2 position,GameTime gameTime,float milisecondsperframes=500)
