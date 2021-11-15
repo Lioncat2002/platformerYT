@@ -21,7 +21,7 @@ namespace platformerYT.src
         {
             playerAnimation = new Animation[2];
 
-            position = new Vector2();
+            position = new Vector2(100);
             velocity = new Vector2();
 
 

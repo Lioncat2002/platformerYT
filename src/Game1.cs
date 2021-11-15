@@ -87,6 +87,7 @@ namespace platformerYT.src
                 if (rect.Intersects(player.hitbox))
                 {
                     player.position = initPos;
+                    player.velocity.X = initPos.X;
                     break;
                 }
             }
