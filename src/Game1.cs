@@ -51,6 +51,7 @@ namespace platformerYT.src
             tilemapManager = new TilemapManager(map,tileset,tilesetTileWidth,tileWidth,tileHeight);
             #endregion
             collisionRects = new List<Rectangle>();
+            Console.WriteLine(map.ObjectGroups.Count);
             foreach (var o in map.ObjectGroups["Collisions"].Objects)
             {
                 if (o.Name == "")
@@ -75,33 +76,28 @@ namespace platformerYT.src
                 Exit();
             var initPos = player.position;
             player.Update();
-            #region This was done after the stream
-            /**
-             * Need to use 2 foreach loops :C
-             * The 1st checks for collisions along the x-axis
-             * and the 2nd checks for collisions along the y-axis
-             */
-            foreach (var rect in collisionRects)
+            #region Player Collisions
+            //y axis
+            
+                foreach (var rect in collisionRects)
+                {
+                    if(!player.isJumping)
+                    player.isFalling = true;
+                    if (rect.Intersects(player.playerFallRect))
+                    {
+                        player.isFalling = false;
+                        break;
+                    }
+                }
+            
+            
+            //x axis
+            foreach(var rect in collisionRects)
             {
-
                 if (rect.Intersects(player.hitbox))
                 {
-                    player.position = initPos;
+                    player.position.X = initPos.X;
                     player.velocity.X = initPos.X;
-                    break;
-                }
-            }
-            /**
-             *The player.isFalling is set to true as long as the 
-             *player doesn't intersect 
-             *if the player intersects then set the isFalling to false
-             */
-            foreach (var rect in collisionRects)
-            {
-                player.isFalling = true;
-                if (rect.Intersects(player.playerFallRect))
-                {
-                    player.isFalling = false;
                     break;
                 }
             }
