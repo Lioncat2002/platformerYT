@@ -20,12 +20,12 @@ namespace platformerYT.src
             
         }
 
-        public void Draw(SpriteBatch spriteBatch,Vector2 position,GameTime gameTime,float milisecondsperframes=500)
+        public void Draw(SpriteBatch spriteBatch,Vector2 position,GameTime gameTime,float milisecondsperframes=500,SpriteEffects effect=SpriteEffects.None)
         {
             if (c < frames)
             {
                 var rect = new Rectangle(32 * c, rows, 32, 32);
-                spriteBatch.Draw(spritesheet, position, rect, Color.White);
+                spriteBatch.Draw(spritesheet, position, rect, Color.White, 0f, new Vector2(), 1f, effect, 1);
                 timeSinceLastFrame += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
 
                 if (timeSinceLastFrame > milisecondsperframes)

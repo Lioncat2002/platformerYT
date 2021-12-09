@@ -51,20 +51,32 @@ namespace platformerYT.src
             tilemapManager = new TilemapManager(map,tileset,tilesetTileWidth,tileWidth,tileHeight);
             #endregion
             collisionRects = new List<Rectangle>();
-            Console.WriteLine(map.ObjectGroups.Count);
+          
             foreach (var o in map.ObjectGroups["Collisions"].Objects)
             {
                 if (o.Name == "")
                 {
                     collisionRects.Add(new Rectangle((int)o.X,(int)o.Y,(int)o.Width,(int)o.Height));
                 }
+                if (o.Name == "start")
+                {
+                    startRect = new Rectangle((int)o.X, (int)o.Y, (int)o.Width, (int)o.Height);
+                }
+                if (o.Name == "end")
+                {
+                    endRect= new Rectangle((int)o.X, (int)o.Y, (int)o.Width, (int)o.Height);
+
+                }
             }
 
 
             #region Player
             player = new Player(
+                new Vector2(startRect.X,startRect.Y),
                 Content.Load<Texture2D>("Sprite Pack 4\\1 - Agent_Mike_Idle (32 x 32)"),
-                Content.Load<Texture2D>("Sprite Pack 4\\1 - Agent_Mike_Running (32 x 32)")
+                Content.Load<Texture2D>("Sprite Pack 4\\1 - Agent_Mike_Running (32 x 32)"),
+                Content.Load<Texture2D>("Sprite Pack 4\\Agent_Mike_Jump"),
+                Content.Load<Texture2D>("Sprite Pack 4\\Agent_Mike_Falling")
              );
             #endregion
             // TODO: use this.Content to load your game content here
@@ -96,8 +108,8 @@ namespace platformerYT.src
             {
                 if (rect.Intersects(player.hitbox))
                 {
-                    player.position.X = initPos.X;
-                    player.velocity.X = initPos.X;
+                    player.position = initPos;
+                    player.velocity = initPos;
                     break;
                 }
             }

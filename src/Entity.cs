@@ -12,6 +12,8 @@ namespace platformerYT.src
         {
             Idle,
             Run,
+            Jumping,
+            Falling
         }
         public Vector2 position;
         public Rectangle hitbox;

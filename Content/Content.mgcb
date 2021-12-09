@@ -514,3 +514,27 @@
 /processorParam:TextureFormat=Color
 /build:Sprite Pack 4/9 - Mr._Circuit_Running (32 x 32).png
 
+#begin Sprite Pack 4/Agent_Mike_Falling.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Sprite Pack 4/Agent_Mike_Falling.png
+
+#begin Sprite Pack 4/Agent_Mike_Jump.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Sprite Pack 4/Agent_Mike_Jump.png
+

@@ -133,3 +133,5 @@ D:\monogame\platformerYT\platformerYT\obj\Debug\netcoreapp3.1\platformerYT.dll
 D:\monogame\platformerYT\platformerYT\obj\Debug\netcoreapp3.1\platformerYT.pdb
 D:\monogame\platformerYT\platformerYT\obj\Debug\netcoreapp3.1\platformerYT.genruntimeconfig.cache
 D:\monogame\platformerYT\platformerYT\bin\Debug\netcoreapp3.1\Content\level1.tmx
+D:\monogame\platformerYT\platformerYT\bin\Debug\netcoreapp3.1\Content\Sprite Pack 4\Agent_Mike_Falling.xnb
+D:\monogame\platformerYT\platformerYT\bin\Debug\netcoreapp3.1\Content\Sprite Pack 4\Agent_Mike_Jump.xnb

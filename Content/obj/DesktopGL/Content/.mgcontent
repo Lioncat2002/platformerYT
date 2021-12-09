@@ -47,8 +47,12 @@
     <File>D:/monogame/platformerYT/platformerYT/Content/Sprite Pack 4/9 - Mr._Circuit_Hurt (32 x 32).png</File>
     <File>D:/monogame/platformerYT/platformerYT/Content/Sprite Pack 4/9 - Mr._Circuit_Idle (32 x 32).png</File>
     <File>D:/monogame/platformerYT/platformerYT/Content/Sprite Pack 4/9 - Mr._Circuit_Running (32 x 32).png</File>
+    <File>D:/monogame/platformerYT/platformerYT/Content/Sprite Pack 4/Agent_Mike_Falling.png</File>
+    <File>D:/monogame/platformerYT/platformerYT/Content/Sprite Pack 4/Agent_Mike_Jump.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
