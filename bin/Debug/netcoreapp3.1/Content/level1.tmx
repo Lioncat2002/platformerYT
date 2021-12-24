@@ -225,7 +225,7 @@
   <object id="16" x="1019" y="1.5" width="26.5" height="413"/>
  </objectgroup>
  <objectgroup id="5" name="EnemyPathways">
-  <object id="17" name="0" x="249.5" y="390" width="189.5" height="23"/>
+  <object id="17" name="0" x="249" y="385" width="189.5" height="23"/>
   <object id="18" name="2" x="485.5" y="169.5" width="292" height="20.5"/>
   <object id="19" name="1" x="483.5" y="326.5" width="313" height="22.5"/>
  </objectgroup>

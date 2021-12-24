@@ -41,22 +41,20 @@ namespace platformerYT.src
         {
             KeyboardState keyboard = Keyboard.GetState();
             
+            
             playerAnimationController = currentAnimation.Idle;
             position = velocity;
             
+ 
+            startY = position.Y;
+            Move(keyboard);
+            Jump(keyboard);
+
             if (isFalling)
             {
                 velocity.Y += fallSpeed;
                 playerAnimationController = currentAnimation.Falling;
             }
-                
-            
-            startY = position.Y;
-            Move(keyboard);
-            Jump(keyboard);
-
-            
-
             hitbox.X = (int)position.X;
             hitbox.Y = (int)position.Y;
             playerFallRect.X= (int)position.X;

@@ -10,6 +10,13 @@ namespace platformerYT.src
     {
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
+        public static float screenWidth;
+        public static float screenHeight;
+
+        #region Managers
+        private GameManager _gameManager;
+        #endregion
+
 
         #region Tilemaps
         private TmxMap map;
@@ -23,6 +30,17 @@ namespace platformerYT.src
         #region Player 
         private Player player;
         #endregion
+
+        #region Enemy
+        private Enemy Martian;
+        private List<Enemy> enemyList;
+        private List<Rectangle> enemyPathway;
+        #endregion
+
+        #region Camera
+        private Camera camera;
+        private Matrix transformMatrix;
+        #endregion
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
@@ -32,14 +50,19 @@ namespace platformerYT.src
 
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
-
+            _graphics.PreferredBackBufferHeight = 450;
+            _graphics.PreferredBackBufferWidth = 500;
+            _graphics.ApplyChanges();
+            screenHeight = _graphics.PreferredBackBufferHeight; 
+            screenWidth = _graphics.PreferredBackBufferWidth;
             base.Initialize();
         }
 
         protected override void LoadContent()
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
+
+
 
             #region Tilemap
             map = new TmxMap("Content\\level1.tmx");
@@ -50,6 +73,8 @@ namespace platformerYT.src
 
             tilemapManager = new TilemapManager(map,tileset,tilesetTileWidth,tileWidth,tileHeight);
             #endregion
+
+            #region Collision
             collisionRects = new List<Rectangle>();
           
             foreach (var o in map.ObjectGroups["Collisions"].Objects)
@@ -69,6 +94,9 @@ namespace platformerYT.src
                 }
             }
 
+            #endregion
+
+            _gameManager=new GameManager(endRect);
 
             #region Player
             player = new Player(
@@ -79,19 +107,57 @@ namespace platformerYT.src
                 Content.Load<Texture2D>("Sprite Pack 4\\Agent_Mike_Falling")
              );
             #endregion
-            // TODO: use this.Content to load your game content here
+
+            #region Camera
+            camera=new Camera();
+            #endregion
+
+            #region Enemy
+            enemyPathway=new List<Rectangle>();
+            foreach(var o in map.ObjectGroups["EnemyPathways"].Objects)
+            {
+                enemyPathway.Add(new Rectangle((int)o.X,(int)o.Y,(int)o.Width,(int)o.Height));
+            }
+            enemyList=new List<Enemy>();
+            Martian=new Enemy(
+               Content.Load<Texture2D>("Sprite Pack 4\\2 - Martian_Red_Running (32 x 32)"),
+               enemyPathway[0]
+                );
+
+            enemyList.Add(Martian);
+            #endregion
         }
 
         protected override void Update(GameTime gameTime)
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
+
+            #region Enemy
+            foreach(var enemy in enemyList)
+            {
+                enemy.Update();
+            }
+            #endregion
+
+            #region Camera update
+            Rectangle target = new Rectangle((int)player.position.X,(int)player.position.Y,32,32);
+            transformMatrix=camera.Follow(target);
+            #endregion
+
+            #region Managers
+            if (_gameManager.hasGameEnded(player.hitbox))
+            {
+                Console.WriteLine("Game Ended!");
+            }
+            #endregion
+
+            #region Player Collisions
             var initPos = player.position;
             player.Update();
-            #region Player Collisions
             //y axis
-            
-                foreach (var rect in collisionRects)
+
+            foreach (var rect in collisionRects)
                 {
                     if(!player.isJumping)
                     player.isFalling = true;
@@ -121,9 +187,14 @@ namespace platformerYT.src
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            _spriteBatch.Begin();
-
+            _spriteBatch.Begin(transformMatrix: transformMatrix);
             tilemapManager.Draw(_spriteBatch);
+            #region Enemy
+            foreach (var enemy in enemyList)
+            {
+                enemy.Draw(_spriteBatch,gameTime);
+            }
+            #endregion
             player.Draw(_spriteBatch, gameTime);
             _spriteBatch.End();
             // TODO: Add your drawing code here
