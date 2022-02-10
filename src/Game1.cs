@@ -1,4 +1,6 @@
-﻿using Microsoft.Xna.Framework;
+﻿using Apos.Gui;
+using FontStashSharp;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
@@ -10,9 +12,15 @@ namespace platformerYT.src
     {
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
+        private RenderTarget2D renderTarget;
+
         public static float screenWidth;
         public static float screenHeight;
-        
+
+        #region UI
+        IMGUI _ui;
+        #endregion
+
 
         #region Managers
         private GameManager _gameManager;
@@ -59,8 +67,8 @@ namespace platformerYT.src
 
         protected override void Initialize()
         {
-            _graphics.PreferredBackBufferHeight = 450;
-            _graphics.PreferredBackBufferWidth = 500;
+            _graphics.PreferredBackBufferHeight = 850;
+            _graphics.PreferredBackBufferWidth = 1024;
             _graphics.ApplyChanges();
             screenHeight = _graphics.PreferredBackBufferHeight; 
             screenWidth = _graphics.PreferredBackBufferWidth;
@@ -71,7 +79,12 @@ namespace platformerYT.src
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
-
+            #region UI
+            FontSystem fontSystem = FontSystemFactory.Create(GraphicsDevice, 2048, 2048);
+            fontSystem.AddFont(TitleContainer.OpenStream($"{Content.RootDirectory}/dogicapixel.ttf"));
+            GuiHelper.Setup(this, fontSystem);
+            _ui=new IMGUI();
+            #endregion
 
             #region Tilemap
             map = new TmxMap("Content\\level1.tmx");
@@ -80,7 +93,7 @@ namespace platformerYT.src
             int tileHeight = map.Tilesets[0].TileHeight;
             int tilesetTileWidth = tileset.Width / tileWidth;
 
-            tilemapManager = new TilemapManager(map,tileset,tilesetTileWidth,tileWidth,tileHeight);
+            tilemapManager = new TilemapManager(map,tileset,tilesetTileWidth,tileWidth,tileHeight,GraphicsDevice,_spriteBatch);
             #endregion
 
             #region Collision
@@ -145,6 +158,8 @@ namespace platformerYT.src
                 );
             enemyList.Add(Martian);
             #endregion
+
+            renderTarget=new RenderTarget2D(GraphicsDevice, 1024, 850);
         }
 
         protected override void Update(GameTime gameTime)
@@ -152,8 +167,10 @@ namespace platformerYT.src
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
+            
+
             #region Enemy
-            foreach(var enemy in enemyList)
+            foreach (var enemy in enemyList)
             {
                 enemy.Update();
 
@@ -280,11 +297,24 @@ namespace platformerYT.src
 
             #endregion
 
+            #region UI
+            GuiHelper.UpdateSetup(gameTime);
+            _ui.UpdateAll(gameTime);
+
+            Panel.Push().XY=new Vector2(500,500);
+
+            Label.Put($"Points: {points}");
+            Panel.Pop();
+
+            GuiHelper.UpdateCleanup();
+            #endregion
+            DrawLevel(gameTime);
             base.Update(gameTime);
         }
 
-        protected override void Draw(GameTime gameTime)
+        public void DrawLevel(GameTime gameTime)
         {
+            GraphicsDevice.SetRenderTarget(renderTarget);
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             _spriteBatch.Begin(transformMatrix: transformMatrix);
@@ -292,11 +322,11 @@ namespace platformerYT.src
             #region Enemy
             foreach (var enemy in enemyList)
             {
-                enemy.Draw(_spriteBatch,gameTime);
+                enemy.Draw(_spriteBatch, gameTime);
             }
             #endregion
             #region Player
-            
+
 
             #region Bullets
 
@@ -310,8 +340,18 @@ namespace platformerYT.src
 
             #endregion
             _spriteBatch.End();
-            // TODO: Add your drawing code here
+            GraphicsDevice.SetRenderTarget(null);
+        }
 
+        protected override void Draw(GameTime gameTime)
+        {
+
+            // TODO: Add your drawing code here
+            _spriteBatch.Begin(samplerState: SamplerState.PointClamp);
+
+            _spriteBatch.Draw(renderTarget, new Vector2(0, 0), null, Color.White, 0f, new Vector2(), 2f, SpriteEffects.None, 0);
+            _spriteBatch.End();
+            _ui.Draw(gameTime);
             base.Draw(gameTime);
         }
     }

@@ -135,3 +135,13 @@ D:\monogame\platformerYT\platformerYT\obj\Debug\netcoreapp3.1\platformerYT.genru
 D:\monogame\platformerYT\platformerYT\bin\Debug\netcoreapp3.1\Content\level1.tmx
 D:\monogame\platformerYT\platformerYT\bin\Debug\netcoreapp3.1\Content\Sprite Pack 4\Agent_Mike_Falling.xnb
 D:\monogame\platformerYT\platformerYT\bin\Debug\netcoreapp3.1\Content\Sprite Pack 4\Agent_Mike_Jump.xnb
+D:\monogame\platformerYT\platformerYT\bin\Debug\netcoreapp3.1\Apos.Gui.dll
+D:\monogame\platformerYT\platformerYT\bin\Debug\netcoreapp3.1\Apos.Input.dll
+D:\monogame\platformerYT\platformerYT\bin\Debug\netcoreapp3.1\Apos.Tweens.dll
+D:\monogame\platformerYT\platformerYT\bin\Debug\netcoreapp3.1\Cyotek.Drawing.BitmapFont.dll
+D:\monogame\platformerYT\platformerYT\bin\Debug\netcoreapp3.1\FontStashSharp.MonoGame.dll
+D:\monogame\platformerYT\platformerYT\bin\Debug\netcoreapp3.1\MonoGame.Extended.dll
+D:\monogame\platformerYT\platformerYT\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+D:\monogame\platformerYT\platformerYT\bin\Debug\netcoreapp3.1\StbImageSharp.dll
+D:\monogame\platformerYT\platformerYT\bin\Debug\netcoreapp3.1\StbTrueTypeSharp.dll
+D:\monogame\platformerYT\platformerYT\bin\Debug\netcoreapp3.1\Content\dogicapixel.ttf

@@ -12,11 +12,13 @@ namespace platformerYT.src
         
         TmxMap map;
         Texture2D tileset;
+        RenderTarget2D renderTarget;
+       
         int tilesetTilesWide;
         int tileWidth;
         int tileHeight;
 
-        public TilemapManager(TmxMap _map, Texture2D _tileset, int _tilesetTilesWide, int _tileWidth, int _tileHeight)
+        public TilemapManager(TmxMap _map, Texture2D _tileset, int _tilesetTilesWide, int _tileWidth, int _tileHeight,GraphicsDevice graphicsDevice,SpriteBatch spriteBatch)
 
         {
             
@@ -25,11 +27,17 @@ namespace platformerYT.src
             tilesetTilesWide = _tilesetTilesWide;
             tileWidth = _tileWidth;
             tileHeight = _tileHeight;
+            
+
+            renderTarget=new RenderTarget2D(graphicsDevice, 1024, 512);
+            DrawTilemap(graphicsDevice,spriteBatch);
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public void DrawTilemap(GraphicsDevice graphicsDevice,SpriteBatch spriteBatch)
         {
-
+            graphicsDevice.SetRenderTarget(renderTarget); 
+            graphicsDevice.Clear(Color.White);
+            spriteBatch.Begin();
             for (var i = 0; i < map.TileLayers.Count; i++)
             {
                 for (var j = 0; j < map.TileLayers[i].Tiles.Count; j++)
@@ -51,6 +59,15 @@ namespace platformerYT.src
                     }
                 }
             }
+            spriteBatch.End();
+            graphicsDevice.SetRenderTarget(null);
+
+        }
+
+        public void Draw(SpriteBatch spriteBatch)
+        {
+
+            spriteBatch.Draw(renderTarget, new Vector2(0, 0), Color.White);
 
         }
 
