@@ -12,9 +12,11 @@ namespace platformerYT.src
         private SpriteBatch _spriteBatch;
         public static float screenWidth;
         public static float screenHeight;
+        
 
         #region Managers
         private GameManager _gameManager;
+        //private bool isGameOver = false;
         #endregion
 
 
@@ -29,6 +31,13 @@ namespace platformerYT.src
 
         #region Player 
         private Player player;
+        private List<Bullet> bullets;
+        private Texture2D bulletTexture;
+        private int time_between_bullets;
+        private int points=0;
+        private int player_health = 10;
+        private int time_between_hurt = 20;
+        private int hit_counter = 0;
         #endregion
 
         #region Enemy
@@ -106,6 +115,11 @@ namespace platformerYT.src
                 Content.Load<Texture2D>("Sprite Pack 4\\Agent_Mike_Jump"),
                 Content.Load<Texture2D>("Sprite Pack 4\\Agent_Mike_Falling")
              );
+            #region Bullet
+            bullets=new List<Bullet>();
+            bulletTexture=Content.Load<Texture2D>("Sprite Pack 4\\1 - Agent_Mike_Bullet (16 x 16)");
+            #endregion
+
             #endregion
 
             #region Camera
@@ -125,6 +139,11 @@ namespace platformerYT.src
                 );
 
             enemyList.Add(Martian);
+            Martian=new Enemy(
+               Content.Load<Texture2D>("Sprite Pack 4\\2 - Martian_Red_Running (32 x 32)"),
+               enemyPathway[1]
+                );
+            enemyList.Add(Martian);
             #endregion
         }
 
@@ -137,7 +156,21 @@ namespace platformerYT.src
             foreach(var enemy in enemyList)
             {
                 enemy.Update();
+
+                if (enemy.hasHit(player.hitbox))
+                {
+                    hit_counter++;
+                    if (hit_counter>time_between_hurt)
+                    {
+                        player_health--;
+                        hit_counter=0;
+                    }
+                }
+
+
+
             }
+            
             #endregion
 
             #region Camera update
@@ -150,7 +183,71 @@ namespace platformerYT.src
             {
                 Console.WriteLine("Game Ended!");
             }
+            if (player_health<=0)
+            {
+                Console.WriteLine("Game Over");
+            }
+            Console.WriteLine($"Health:{player_health}");
             #endregion
+
+            #region Player
+
+            #region Bullet
+
+            if (player.isShooting)
+            {
+                if(time_between_bullets>5 && bullets.ToArray().Length<20)
+                {
+                    var temp_hitbox = new
+                                Rectangle((int)player.position.X+7,
+                                          (int)player.position.Y+15,
+                                          bulletTexture.Width,
+                                          bulletTexture.Height);
+                    if (player.effects==SpriteEffects.None)
+                    {
+                        
+                        bullets.Add(new Bullet(bulletTexture, 4, temp_hitbox));
+                    }
+                    if (player.effects==SpriteEffects.FlipHorizontally)
+                    {
+
+                        bullets.Add(new Bullet(bulletTexture, -4, temp_hitbox));
+                    }
+                    time_between_bullets=0;
+                }
+                else
+                {
+                    time_between_bullets++;
+                }
+                
+            }
+
+            foreach(var bullet in bullets.ToArray())
+            {
+                bullet.Update();
+
+                foreach(var rect in collisionRects)
+                {
+                    if(rect.Intersects(bullet.hitbox))
+                    {
+                        bullets.Remove(bullet);
+                        break;
+                    }
+                }
+                foreach(var enemy in enemyList.ToArray())
+                {
+                    if (bullet.hitbox.Intersects(enemy.hitbox))
+                    {
+                        bullets.Remove(bullet);
+                        enemyList.Remove(enemy);
+                        points++;
+                        break;
+                    }
+                }
+            }
+            Console.WriteLine("Points: "+points);
+            #endregion
+
 
             #region Player Collisions
             var initPos = player.position;
@@ -180,6 +277,9 @@ namespace platformerYT.src
                 }
             }
             #endregion
+
+            #endregion
+
             base.Update(gameTime);
         }
 
@@ -195,7 +295,20 @@ namespace platformerYT.src
                 enemy.Draw(_spriteBatch,gameTime);
             }
             #endregion
+            #region Player
+            
+
+            #region Bullets
+
+            foreach (var bullet in bullets.ToArray())
+            {
+                bullet.Draw(_spriteBatch);
+            }
+            #endregion
+
             player.Draw(_spriteBatch, gameTime);
+
+            #endregion
             _spriteBatch.End();
             // TODO: Add your drawing code here
 

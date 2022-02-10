@@ -19,6 +19,7 @@ namespace platformerYT.src
 
         public bool isFalling = true;
         public bool isJumping;
+        public bool isShooting;
 
         public Animation[] playerAnimation;
         public currentAnimation playerAnimationController;
@@ -44,7 +45,8 @@ namespace platformerYT.src
             
             playerAnimationController = currentAnimation.Idle;
             position = velocity;
-            
+
+            isShooting=keyboard.IsKeyDown(Keys.Enter);
  
             startY = position.Y;
             Move(keyboard);
