@@ -204,7 +204,6 @@ namespace platformerYT.src
             {
                 Console.WriteLine("Game Over");
             }
-            Console.WriteLine($"Health:{player_health}");
             #endregion
 
             #region Player
@@ -262,7 +261,7 @@ namespace platformerYT.src
                     }
                 }
             }
-            Console.WriteLine("Points: "+points);
+            
             #endregion
 
 
@@ -301,11 +300,14 @@ namespace platformerYT.src
             GuiHelper.UpdateSetup(gameTime);
             _ui.UpdateAll(gameTime);
 
-            Panel.Push().XY=new Vector2(500,500);
+            Panel.Push().XY=new Vector2(10,10);
 
             Label.Put($"Points: {points}");
             Panel.Pop();
+            Panel.Push().XY = new Vector2(10, 50);
 
+            Label.Put($"Health: {player_health}");
+            Panel.Pop();
             GuiHelper.UpdateCleanup();
             #endregion
             DrawLevel(gameTime);

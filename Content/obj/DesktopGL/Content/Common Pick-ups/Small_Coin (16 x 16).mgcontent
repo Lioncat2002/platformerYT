@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>D:/monogame/platformerYT/platformerYT/Content/Common Pick-ups/Small_Coin (16 x 16).png</SourceFile>
-  <SourceTime>2021-10-21T10:51:39.6479599+05:30</SourceTime>
-  <DestFile>D:/monogame/platformerYT/platformerYT/Content/bin/DesktopGL/Content/Common Pick-ups/Small_Coin (16 x 16).xnb</DestFile>
-  <DestTime>2021-11-04T20:50:19.464607+05:30</DestTime>
+  <SourceFile>D:/monogame/platformerYT/Content/Common Pick-ups/Small_Coin (16 x 16).png</SourceFile>
+  <SourceTime>2022-04-21T23:22:29.5115446+05:30</SourceTime>
+  <DestFile>D:/monogame/platformerYT/Content/bin/DesktopGL/Content/Common Pick-ups/Small_Coin (16 x 16).xnb</DestFile>
+  <DestTime>2022-04-21T23:23:06.3804477+05:30</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2020-08-10T21:47:54+05:30</ImporterTime>
   <Processor>TextureProcessor</Processor>

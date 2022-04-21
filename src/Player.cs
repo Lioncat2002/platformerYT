@@ -119,11 +119,11 @@ namespace platformerYT.src
                     break;
                 case currentAnimation.Jumping:
                     playerAnimation[2].Draw(spriteBatch, position, gameTime, 100,effects);
-                    Console.WriteLine("Jumping");
+               
                     break;
                 case currentAnimation.Falling:
                     playerAnimation[3].Draw(spriteBatch, position, gameTime, 600,effects);
-                    Console.WriteLine("Falling");
+                  
                     break;
             }
           
