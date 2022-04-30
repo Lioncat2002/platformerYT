@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.5" tiledversion="1.7.2" orientation="orthogonal" renderorder="right-down" width="64" height="64" tilewidth="16" tileheight="16" infinite="0" nextlayerid="6" nextobjectid="20">
+<map version="1.8" tiledversion="1.8.4" orientation="orthogonal" renderorder="right-down" width="64" height="64" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="40">
  <tileset firstgid="1" name="full" tilewidth="16" tileheight="16" tilecount="2178" columns="99">
   <image source="Cave Tileset/full.png" width="1584" height="352"/>
  </tileset>
@@ -228,5 +228,26 @@
   <object id="17" name="0" x="249" y="385" width="189.5" height="23"/>
   <object id="18" name="2" x="485.5" y="169.5" width="292" height="20.5"/>
   <object id="19" name="1" x="483.5" y="326.5" width="313" height="22.5"/>
+ </objectgroup>
+ <objectgroup id="6" name="Collectibles">
+  <object id="20" x="297" y="397"/>
+  <object id="21" x="392" y="394.5"/>
+  <object id="22" x="518" y="173.5"/>
+  <object id="24" x="588" y="170.5"/>
+  <object id="25" x="655.5" y="170"/>
+  <object id="26" x="701.5" y="169.5"/>
+  <object id="27" x="750" y="169"/>
+  <object id="28" x="519.5" y="330.5"/>
+  <object id="29" x="568" y="327"/>
+  <object id="30" x="636" y="328"/>
+  <object id="31" x="701" y="326"/>
+  <object id="32" x="759.5" y="327"/>
+  <object id="33" x="608" y="286.5"/>
+  <object id="34" x="673.5" y="284.5"/>
+  <object id="35" x="519.5" y="137.5"/>
+  <object id="36" x="589.5" y="134"/>
+  <object id="37" x="656" y="132"/>
+  <object id="38" x="699.5" y="130.5"/>
+  <object id="39" x="749" y="130.5"/>
  </objectgroup>
 </map>

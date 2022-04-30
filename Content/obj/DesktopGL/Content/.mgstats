@@ -11,7 +11,7 @@ Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Siz
 "D:/monogame/platformerYT/Content/Common Pick-ups/Treasure_Chest (32 x 16).png","D:/monogame/platformerYT/Content/bin/DesktopGL/Content/Common Pick-ups/Treasure_Chest (32 x 16).xnb","TextureProcessor","Texture2DContent",505,6229,0.0048639
 "D:/monogame/platformerYT/Content/Common Pick-ups/Wrapped_Presents (16 x 16).png","D:/monogame/platformerYT/Content/bin/DesktopGL/Content/Common Pick-ups/Wrapped_Presents (16 x 16).xnb","TextureProcessor","Texture2DContent",445,3157,0.0062894
 "D:/monogame/platformerYT/Content/dogicapixel.ttf","D:\monogame\platformerYT\Content\bin\DesktopGL\Content\dogicapixel.ttf","CopyItem","File",33556,33556,0.0488299
-"D:/monogame/platformerYT/Content/level1.tmx","D:\monogame\platformerYT\Content\bin\DesktopGL\Content\level1.tmx","CopyItem","File",32110,32110,0.0175206
+"D:/monogame/platformerYT/Content/level1.tmx","D:\monogame\platformerYT\Content\bin\DesktopGL\Content\level1.tmx","CopyItem","File",32909,32909,0.0057752
 "D:/monogame/platformerYT/Content/sfx/collect.wav","D:/monogame/platformerYT/Content/bin/DesktopGL/Content/sfx/collect.xnb","SoundEffectProcessor","SoundEffectContent",21359,21420,2.2783868
 "D:/monogame/platformerYT/Content/sfx/enemyDie.wav","D:/monogame/platformerYT/Content/bin/DesktopGL/Content/sfx/enemyDie.xnb","SoundEffectProcessor","SoundEffectContent",19894,19955,1.9499094
 "D:/monogame/platformerYT/Content/sfx/shoot.wav","D:/monogame/platformerYT/Content/bin/DesktopGL/Content/sfx/shoot.xnb","SoundEffectProcessor","SoundEffectContent",4734,4795,3.4921713
